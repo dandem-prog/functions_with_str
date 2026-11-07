@@ -67,12 +67,85 @@ int main() {
 
 	// Пользователь вводит строку.Нужно проверить чтобы в ней были 1 буква нижнего регистра, 3 буквы или цифры(в сумме) и не было пробелов.
 
+	/*
 	char str6[200];
 	std::cout << "enter string\n";
 	std::cin.getline(str6, 200);
 
+	bool is_lower = false;
+	int counter_n = 0;
+	bool is_space = false;
+	for (char* c = str6; *c != '\0'; ++c) {
+		if (islower(*c)) is_lower = true;
+		if (isalnum(*c)) ++counter_n;
+		if (isspace(*c)) is_space = true;
+	}
 
+	if (is_lower && is_space == false && counter_n >= 3) std::cout << "your string is allowed\n";
+	else std::cout << "your string is not allowed\n";
+	*/
 
+	// Пользователь вводит строку. все символы нижнего регистра заменить на верхний и наоборот.
 
+    /*
+	char str7[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str7, 200);
 
+	char* current_symbol = str7;
+	while (*current_symbol != '\0') {
+		if (isupper(*current_symbol)) *current_symbol = tolower(*current_symbol);
+		else if (islower(*current_symbol)) *current_symbol = toupper(*current_symbol);
+		++current_symbol;
+	}
+
+	std::cout << str7;
+	*/
+
+	//Пользователь вводит строку и символ. мы проверяем есть ли этот символ в строке и если есть, то оставшуюся часть строки выводит
+
+    /*
+    char str8[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str8, 200);
+
+	char symbol;
+	std::cout << "enter symbol\n";
+	std::cin >> symbol;
+
+	char* ptr_s = strchr(str8, symbol);
+	if (ptr_s == nullptr) std::cout << "in this string that symbol doesnt exist\n";
+	else std::cout << "this symbol in " << ptr_s - str8 + 1 << " position. str: " << ptr_s + 1;
+	*/
+
+    //Пользователь вводит строку. мы печатаем её размер до первого разделителя(разделители .,!? )
+
+    /*
+    char str9[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str9, 200);
+
+	char delimeters[10] = ".,?! ";
+
+	if (strcspn(str9, delimeters) != 0) {
+		std::cout << "size forward delimeter : " << strcspn(str9, delimeters);
+	}
+	else std::cout << "string start from delimeter and he have " << strspn(str9,delimeters) << " delimeters in start\n";
+	*/
+
+    //Пользователь вводит строку. мы печатаем её после первого разделителя(разделители .,!? )
+
+    /*
+	char str10[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str10, 200);
+
+	char delimeters[10] = ".,?! ";
+
+	char* first_del = strpbrk(str10, delimeters);
+	if (first_del == nullptr)	std::cout << "in this string  delimeters does not exist\n";
+	else std::cout << first_del + 1;
+	*/
+
+	//
 }
