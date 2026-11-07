@@ -147,5 +147,31 @@ int main() {
 	else std::cout << first_del + 1;
 	*/
 
-	//
+	//Пользователь вводит строку. мы выводим всё что идёт после слова "start".
+
+	/*
+	char str11[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str11, 200);
+
+	char str12[200] = "start";
+
+	if (strstr(str11, str12) == nullptr) std::cout << "you didnt wrote \" start \" \n";
+	else std::cout << strstr(str11, str12) + strlen(str12);
+	*/
+
+	//Пользователь вводит строку. мы разбиваем её на отдельные слова
+
+
+	char str13[200];
+	std::cout << "enter string\n";
+	std::cin.getline(str13, 200);
+
+	char delimeters[10] = ".,?! ";
+
+	char* word_ptr = strtok(str13, delimeters);
+	while (word_ptr != nullptr) {
+		std::cout << word_ptr << '\n';
+		word_ptr = strtok(nullptr, delimeters);
+	}
 }
